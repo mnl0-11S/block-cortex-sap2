@@ -546,7 +546,7 @@
   - name: Invoice Date
     title: Invoice Date
     type: field_filter
-    default_value: 365 day
+    default_value: 1 year ago for 1 year
     allow_multiple_values: true
     required: true
     ui_config:
