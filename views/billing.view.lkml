@@ -551,6 +551,11 @@ view: billing {
     type: number
     sql: ${TABLE}.YearOrderCount ;;
   }
+  dimension: flag {
+    type: string
+    sql: ${TABLE}.Flag ;;
+
+  }
 
   measure: count {
     type: count
