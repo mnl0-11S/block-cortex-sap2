@@ -291,4 +291,14 @@ explore: global_currency_list_pdt {
 
 explore: billing {
   view_name: billing
+  join: mara {
+    fields: [
+      mara.matnr,
+      mara.mandt,
+      mara.ntgew
+    ]
+    sql_on: ${billing.material_number_matnr} = ${mara.matnr} and ${billing.client_mandt} = ${mara.mandt} ;;
+    relationship: one_to_many
+    type: left_outer
+  }
 }
