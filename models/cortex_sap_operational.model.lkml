@@ -288,3 +288,7 @@ explore: global_currency_list_pdt {
   hidden: yes
   description: "Used to provide filter suggestions for Global Currency"
 }
+
+explore: billing {
+  view_name: billing
+}
