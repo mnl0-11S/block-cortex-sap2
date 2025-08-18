@@ -3,7 +3,7 @@ view: inventory_metrics_overview {
     sql: select * from `@{GCP_PROJECT}.@{REPORTING_DATASET}.InventoryKeyMetrics`
       ;;
   }
-  
+
   fields_hidden_by_default: yes
 
   dimension: key {
@@ -223,6 +223,7 @@ view: inventory_metrics_overview {
   dimension: plant_werks {
     type: string
     sql: ${TABLE}.Plant_WERKS ;;
+    hidden: no
   }
 
   dimension: quantity_issued_to_delivery {
