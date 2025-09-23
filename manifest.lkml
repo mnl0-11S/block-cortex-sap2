@@ -1,6 +1,7 @@
 constant: CONNECTION_NAME {
-  value: "block-cortex-for-sap"
+  value: "cortex-looker"
   export: override_required
+  # block-cortex-for-sap
 }
 
 constant: GCP_PROJECT {
