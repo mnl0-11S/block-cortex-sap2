@@ -98,15 +98,15 @@
     width: 24
     height: 1
 
-
-
   filters:
   - name: Hierarchy
     title: Hierarchy
     type: field_filter
-    default_value: FPA1
+    # default_value: FPA1
+    default_value: ""
     allow_multiple_values: false
-    required: true
+    # required: true
+    required: false
     ui_config:
       type: dropdown_menu
       display: inline
@@ -116,7 +116,8 @@
   - name: Display Timeframe
     title: Display Timeframe
     type: field_filter
-    default_value: qtr
+    # default_value: qtr
+    default_value: ""
     allow_multiple_values: false
     required: false
     ui_config:
@@ -130,7 +131,8 @@
     title: Select Fiscal Timeframe
     type: field_filter
     # if using demo data default is 2023.Q4 else find current calendar quarter
-    default_value: "{% if _user_attributes['sap_use_demo_data']=='Yes'%}{% assign qtr = '2023.Q4'%}{%else%}{% assign q = 'now' | date: '%m' | times: 1.0 | divided_by: 3 | ceil %}{% assign qtr = 'now' | date: '%Y' | append: '.Q' | append: q %}{%endif%}{{qtr}}"
+    # default_value: "{% if _user_attributes['sap_use_demo_data']=='Yes'%}{% assign qtr = '2023.Q4'%}{%else%}{% assign q = 'now' | date: '%m' | times: 1.0 | divided_by: 3 | ceil %}{% assign qtr = 'now' | date: '%Y' | append: '.Q' | append: q %}{%endif%}{{qtr}}"
+    default_value: ""
     allow_multiple_values: true
     required: false
     ui_config:
@@ -143,7 +145,8 @@
   - name: Combine Selected Timeframes?
     title: Combine Selected Timeframes?
     type: field_filter
-    default_value: "Yes"
+    # default_value: "Yes"
+    default_value: ""
     allow_multiple_values: false
     required: false
     ui_config:
@@ -155,7 +158,8 @@
   - name: Select Comparison Type
     title: Select Comparison Type
     type: field_filter
-    default_value: yoy
+    # default_value: yoy
+    default_value: ""
     allow_multiple_values: false
     required: false
     ui_config:
@@ -168,9 +172,12 @@
   - name: Global Currency
     title: Global Currency
     type: field_filter
-    default_value: USD
+    # default_value: USD
+    # default_value: CLP
+    default_value: ""
     allow_multiple_values: false
-    required: true
+    # required: true
+    required: false
     ui_config:
       type: dropdown_menu
       display: inline
@@ -181,7 +188,8 @@
   - name: Company Code
     title: Company Code
     type: field_filter
-    default_value: "%CENTRAL%"
+    # default_value: "%CENTRAL%"
+    default_value: ""
     allow_multiple_values: true
     required: false
     ui_config:
@@ -194,7 +202,8 @@
   - name: Ledger Name
     title: Ledger Name
     type: field_filter
-    default_value: '%0L%'
+    # default_value: '%0L%'
+    default_value: ""
     allow_multiple_values: true
     required: false
     ui_config:
@@ -207,7 +216,8 @@
   - name: Top Hierarchy Level
     title: Top Hierarchy Level
     type: field_filter
-    default_value: '2'
+    # default_value: '2'
+    default_value: ""
     allow_multiple_values: true
     required: false
     ui_config:

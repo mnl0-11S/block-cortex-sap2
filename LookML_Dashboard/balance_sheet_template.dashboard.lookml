@@ -31,7 +31,8 @@
     type: single_value
     fields: [balance_sheet.title_balance_sheet]
     filters:
-      balance_sheet.level_number: '3,4'
+      # balance_sheet.level_number: '3,4'
+      balance_sheet.level_number: '2'
       balance_sheet_fiscal_periods_selected_sdt.fiscal_period_group: 'Reporting'
     custom_color_enabled: true
     show_single_value_title: false
@@ -55,7 +56,8 @@
     # assumes as 12 month fiscal period that aligns with calendar. Will find last complete month and select period with same value
     default_value: "{% if _user_attributes['sap_use_demo_data']=='Yes'%}{% assign ym = '2023.011'%}{%else%}{% assign intervalDays = 31 %}{% assign intervalSeconds = intervalDays | times: 86400 %}{% assign daysMinus31 = 'now' | date: '%s' | minus: intervalSeconds %}{% assign m = daysMinus31 | date: '%m' | prepend: '00' | slice: -3,3 %}{% assign ym = daysMinus31 | date: '%Y' | append: '.' | append: m %}{%endif%}{{ym}}"
     allow_multiple_values: false
-    required: true
+    # required: true
+    required: false
     ui_config:
       type: dropdown_menu
       display: inline
@@ -66,8 +68,10 @@
     title: Comparison Type
     type: field_filter
     default_value: yoy
+    # default_value: ""
     allow_multiple_values: false
-    required: true
+    # required: true
+    required: false
     ui_config:
       type: dropdown_menu
       display: inline
@@ -89,9 +93,11 @@
   - name: Global Currency
     title: Global Currency
     type: field_filter
-    default_value: USD
+    # default_value: USD
+    default_value: CLP
     allow_multiple_values: false
-    required: true
+    # required: true
+    required: false
     ui_config:
       type: dropdown_menu
       display: inline
@@ -101,9 +107,11 @@
   - name: Hierarchy
     title: Hierarchy
     type: field_filter
-    default_value: FPA1
+    # default_value: FPA1
+    default_value: BLCE
     allow_multiple_values: false
-    required: true
+    # required: true
+    required: false
     ui_config:
       type: dropdown_menu
       display: inline
@@ -113,9 +121,11 @@
   - name: Chart of Accounts
     title: Chart of Accounts
     type: field_filter
-    default_value: "{% if _user_attributes['sap_sql_flavor']=='S4' %}{% assign coa = 'YCOA'%}{%elsif _user_attributes['sap_sql_flavor']=='ECC'%}{% assign coa = 'CA01' %}{%else%}{%assign coa = 'something else'%}{% endif %}{{coa}}"
+    # default_value: "{% if _user_attributes['sap_sql_flavor']=='S4' %}{% assign coa = 'YCOA'%}{%elsif _user_attributes['sap_sql_flavor']=='ECC'%}{% assign coa = 'CA01' %}{%else%}{%assign coa = 'something else'%}{% endif %}{{coa}}"
+    default_value: ""
     allow_multiple_values: false
-    required: true
+    # required: true
+    required: false
     ui_config:
       type: dropdown_menu
       display: inline
@@ -125,7 +135,9 @@
   - name: Company Code
     title: Company Code
     type: field_filter
-    default_value: "%CENTRAL%"
+    # default_value: "%CENTRAL%"
+    # default_value: "%CL%"
+    default_value: ""
     allow_multiple_values: false
     required: false
     ui_config:
@@ -149,7 +161,7 @@
   - name: Top Hierarchy Level
     title: Top Hierarchy Level
     type: field_filter
-    default_value: '2'
+    default_value: ''
     allow_multiple_values: false
     required: false
     ui_config:
