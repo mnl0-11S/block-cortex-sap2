@@ -10,7 +10,8 @@ constant: GCP_PROJECT {
 }
 
 constant: REPORTING_DATASET {
-  value: "REPORTING"
+  # value: "REPORTING"
+  value: "Dev_Inventory_Managment"
   export: override_required
 }
 
